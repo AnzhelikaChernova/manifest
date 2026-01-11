@@ -447,8 +447,7 @@ export default function App() {
         /* Section Headers */
         .section-header {
           padding: 6rem 4rem 3rem;
-          max-width: 1400px;
-          margin: 0 auto;
+          max-width: 100%;
         }
 
         .section-label {
@@ -475,21 +474,36 @@ export default function App() {
         /* Principles Grid */
         .principles-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(4, 1fr);
           gap: 1.5rem;
           padding: 0 4rem 6rem;
-          max-width: 1400px;
+          max-width: 100%;
           margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+          .principles-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 600px) {
+          .principles-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .principle-card {
           background: linear-gradient(160deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
           border-radius: 12px;
-          padding: 2.5rem;
+          padding: 2rem;
           position: relative;
           overflow: hidden;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: default;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
 
         .principle-card::before {
@@ -509,15 +523,16 @@ export default function App() {
 
         .principle-card h3 {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           margin-bottom: 1rem;
           letter-spacing: 0.02em;
         }
 
         .principle-card p {
           color: rgba(255,255,255,0.75);
-          font-size: 1rem;
-          line-height: 1.7;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          flex-grow: 1;
         }
 
         /* Content Section */
