@@ -55,7 +55,9 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="logo">КОМАНДА №1</div>
+      <div className="header-logo">
+        <img src="/logo.png" alt="UN1ON" />
+      </div>
       <nav className="nav-links">
         <a href="#principles">Принципы</a>
         <a href="#rules">Правила</a>
@@ -77,6 +79,9 @@ const Hero = () => (
         Как мы работаем вместе. Правила игры, которые мы установили на старте — 
         чтобы потом не было сюрпризов.
       </p>
+    </div>
+    <div className="hero-logo">
+      <img src="/logo.png" alt="UN1ON" />
     </div>
     <div className="scroll-indicator">
       <span>Листай вниз</span>
@@ -233,7 +238,7 @@ const FinalSection = () => (
     <FadeIn delay={0.2}>
       <div className="final-quote">
         <p>«Мы не идеальные. Мы точно будем косячить. Но мы договорились, как с этим справляться — и это уже больше, чем у большинства команд.»</p>
-        <div className="signature">— Команда №1, 2025</div>
+        <div className="signature">— UN1ON, 2025</div>
       </div>
     </FadeIn>
   </section>
@@ -242,7 +247,7 @@ const FinalSection = () => (
 // Footer
 const Footer = () => (
   <footer className="footer">
-    <p>Манифест команды • Лидерство и Инновации • 2025</p>
+    <p>UN1ON • Манифест команды • 2025</p>
   </footer>
 );
 
@@ -306,6 +311,11 @@ export default function App() {
           font-size: 1.8rem;
           color: var(--netflix-red);
           letter-spacing: 0.05em;
+        }
+
+        .header-logo img {
+          height: 70px;
+          width: auto;
         }
 
         .nav-links {
@@ -381,6 +391,24 @@ export default function App() {
           max-width: 600px;
           margin-bottom: 2.5rem;
           line-height: 1.6;
+        }
+
+        .hero-logo {
+          position: absolute;
+          right: 5%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .hero-logo img {
+          width: clamp(400px, 45vw, 700px);
+          height: auto;
+        }
+
+        @media (max-width: 1024px) {
+          .hero-logo {
+            display: none;
+          }
         }
 
         .hero-team {
