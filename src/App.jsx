@@ -100,6 +100,7 @@ const Intro = () => (
         <p>Этот документ — не формальность для галочки. Это договорённости, которые мы заключаем друг с другом на старте.</p>
         <p>Мы видели, как разваливаются команды. Обычно не из-за сложных задач, а из-за простых вещей: кто-то молчит о проблемах, кто-то тянет одеяло, кто-то делает вид, что работает.</p>
         <p>Мы решили сразу проговорить правила игры. Чтобы потом не было «я думал, ты сделаешь» и «а мне никто не говорил».</p>
+        <div className="section-author">— Анжелика</div>
       </div>
     </FadeIn>
     <FadeIn delay={0.2}>
@@ -148,6 +149,7 @@ const Principles = () => {
           <div className="section-label">ОСНОВА</div>
           <h2 className="section-title">НАШИ ПРИНЦИПЫ</h2>
           <p className="section-desc">Четыре столпа, на которых строится наша работа вместе</p>
+          <div className="section-author">— Максат</div>
         </FadeIn>
       </div>
       <div className="principles-grid">
@@ -167,6 +169,7 @@ const Rules = () => (
       <p>Мы спорим. Это нормально и даже полезно — в спорах рождаются хорошие решения.</p>
       <p>Но мы спорим <span className="highlight">аргументами, а не голосом</span>. Побеждает не тот, кто громче, а тот, у кого сильнее позиция.</p>
       <p>После решения — всё: даже если ты был против, ты его выполняешь. «Не согласен, но делаю» — это взрослая позиция.</p>
+      <div className="section-author">— Камран</div>
     </FadeIn>
   </section>
 );
@@ -212,6 +215,7 @@ const RedLines = () => {
           <div className="section-label">ГРАНИЦЫ</div>
           <h2 className="section-title">КРАСНЫЕ ЛИНИИ</h2>
           <p className="section-desc">Что для нас неприемлемо — без исключений</p>
+          <div className="section-author">— Альбина</div>
         </FadeIn>
         <div className="red-lines-list">
           {redLines.map((item, i) => (
@@ -234,6 +238,7 @@ const FinalSection = () => (
         Честно говорит друг другу о проблемах — и решает их. 
         Учится на каждом проекте и становится сильнее.
       </p>
+      <div className="section-author">— Айна</div>
     </FadeIn>
     <FadeIn delay={0.2}>
       <div className="final-quote">
@@ -497,6 +502,14 @@ export default function App() {
           font-size: 1.2rem;
           color: var(--light-gray);
           max-width: 600px;
+        }
+
+        .section-author {
+          margin-top: 1.5rem;
+          font-size: 1rem;
+          color: var(--netflix-red);
+          font-style: italic;
+          font-weight: 500;
         }
 
         /* Principles Grid */
